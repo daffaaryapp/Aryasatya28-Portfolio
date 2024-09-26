@@ -853,91 +853,36 @@
 
           <ul class="blog-posts-list">
 
+            @foreach ( $projects as $project )
             <li class="blog-post-item">
-              <a href="http://kimiaxbindo.epizy.com/index.php" target="_blank"> 
+              <a href="{{ $project->link }}" target="_blank"> 
 
                 <figure class="blog-banner-box">
-                  <img src="./assets/images/myweb.png" alt="Design conferences in 2022" loading="lazy">
+                  <img src="{{ Storage::url($project->image) }}" alt="Design conferences in 2022" loading="lazy">
                 </figure>
 
                 <div class="blog-content">
 
                   <div class="blog-meta">
-                    <p class="blog-category">Web</p>
+                    <p class="blog-category">{{ $project->criteria }}</p>
 
                     <span class="dot"></span>
 
-                    <time datetime="2022-02-23">2021</time>
+                    <time >{{ $project->created_at->format('F Y') }}</time>
                   </div>
 
-                  <h3 class="h3 blog-item-title">Asam Benzoat Sebagai Pengawet di Makanan dan Minuman</h3>
-                  <p class="blog-text">
-                    Asam benzoat (C6H5COOH) merupakan bahan pengawet yang luas penggunaannya dan sering digunakan pada bahan makanan. Penggunaan bahan kimia sebagai bahan tambahan pada makanan saat ini sering ditemui pada makanan dan minuman.
-                  </p>
+                  <h3 class="h3 blog-item-title">{{ $project->headline }}</h3>
+
+                  <p class="blog-text">{{ $project->description }}</p>
                   
 
                 </div>
 
               </a>
             </li>
+            @endforeach
 
-            <li class="blog-post-item">
-              <a href="http://jakartatimur.rf.gd/?i=1" target="_blank">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/jaktim.png" alt="Best fonts every designer" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Web</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">October, 2023</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Jakarta Timur</h3>
-
-                  <p class="blog-text">
-                    Jakarta Timur adalah salah satu kota administratif di Jakarta, Indonesia. Dengan luas wilayah sekitar 186,02 kilometer persegi, wilayah ini merupakan bagian yang penting dari ibu kota. 
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-            <li class="blog-post-item">
-              <a href="https://penpra.site/" target="_blank">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/penpra.png" alt="Best fonts every designer" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Web</p>
-
-                    <span class="dot"></span>
-                    
-                    <time datetime="2022-02-23">December, 2023</time>
-                    
-                  </div>
-                  
-                  
-                  <h3 class="h3 blog-item-title">Pengaduan Praja</h3>
-                  
-                  
-                  <p class="blog-text">
-                    Penpra adalah aplikasi Pengaduan Praja, yang mana sekarang praja dapat mengadukan permasalahan melalui website Penpra yang di buat oleh saya di kampus sumbar, aplikasi di develop menggunakan framework laravel 
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
+            
 
             <!-- <li class="blog-post-item">
               <a href="#">
